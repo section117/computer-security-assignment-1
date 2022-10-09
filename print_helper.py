@@ -1,5 +1,5 @@
 def print_actions_for_user_and_get_action(all_actions):
-    print("Please select an action to continue")
+    print("\n\nPlease select an action to continue")
     i = 1
     for a in all_actions:
         print(str(i) + " - " + a)
@@ -15,7 +15,9 @@ def print_actions_for_user_and_get_action(all_actions):
 
 def pretty_print(records):
     for r in records:
-        print("patient Name - " + r["patient_username"])
+        print("-----------------------------------------------------")
+        print("Patient Name - " + r["patient_username"])
+        print("Record sensitivity - " + r["sens_level"])
         p = r["payload"]
         match r["type"]:
             case "personal":
@@ -29,3 +31,4 @@ def pretty_print(records):
                 print("Lab test prescription record \nTest name - " + p["test_name"] + "\nDate - " + p["date"] + "\n")
             case default:
                 print("Unknown record!")
+        print("-----------------------------------------------------\n")

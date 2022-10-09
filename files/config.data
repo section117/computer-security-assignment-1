@@ -1,3 +1,5 @@
 {"username": "1", "password": "83878c91171338902e0fe0fb97a8c47a", "user_type": "staff", "priv_level": "doctor"}
 {"username": "2", "password": "83878c91171338902e0fe0fb97a8c47a", "user_type": "staff", "priv_level": "pharmacist"}
 {"username": "3", "password": "83878c91171338902e0fe0fb97a8c47a", "user_type": "staff", "priv_level": "chemist"}
+{"username": "4", "password": "83878c91171338902e0fe0fb97a8c47a", "user_type": "staff", "priv_level": "nurse"}
+{"username": "5", "password": "83878c91171338902e0fe0fb97a8c47a", "user_type": "patient", "priv_level": "patient"}

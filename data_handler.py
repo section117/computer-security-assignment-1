@@ -14,14 +14,16 @@ def decode_record(record):
         raise Exception("Invalid data file")
 
 
-def read_all_records(filter_type=None):
+def read_all_records(filter_type=None, sensitivity_levels=None):
+    sensitivity_levels = [] if sensitivity_levels is None else sensitivity_levels
     all_records = []
     file = get_file("r")
     try:
         for line in file:
             r = decode_record(line)
             if filter_type is None or filter_type == r["type"]:
-                all_records.append(r)
+                if r["sens_level"] in sensitivity_levels:
+                    all_records.append(r)
     except:
         return []
     finally:
@@ -30,7 +32,8 @@ def read_all_records(filter_type=None):
     return all_records
 
 
-def read_all_records_by_username(username, filter_type=None):
+def read_all_records_by_username(username, filter_type=None, sensitivity_levels=None):
+    sensitivity_levels = [] if sensitivity_levels is None else sensitivity_levels
     all_records = []
     file = get_file("r")
     try:
@@ -38,7 +41,8 @@ def read_all_records_by_username(username, filter_type=None):
             r = decode_record(line)
             if r["patient_username"] == username:
                 if filter_type is None or filter_type == r["type"]:
-                    all_records.append(r)
+                    if r["sens_level"] in sensitivity_levels:
+                        all_records.append(r)
     except:
         return []
     finally:
@@ -61,34 +65,34 @@ def write_a_record(sensitivity_level, patient_id, record_type, payload):
     file.close()
 
 
-def add_personal_details(patient_id, address, phone):
+def add_personal_details(patient_id, sl, address, phone):
     payload = {
         "address": address,
         "phone": phone
     }
-    write_a_record("high", patient_id, "personal", payload)
+    write_a_record(sl, patient_id, "personal", payload)
 
 
-def add_sickness_details(patient_id, sickness, symptoms, date):
+def add_sickness_details(patient_id, sl, sickness, symptoms, date):
     payload = {
         "sickness": sickness,
         "symptoms": symptoms,
         "date": date
     }
-    write_a_record("medium", patient_id, "sickness", payload)
+    write_a_record(sl, patient_id, "sickness", payload)
 
 
-def add_drug_prescription(patient_id, drugs_list, date):
+def add_drug_prescription(patient_id, sl, drugs_list, date):
     payload = {
         "drugs": drugs_list,
         "date": date
     }
-    write_a_record("medium", patient_id, "drugs", payload)
+    write_a_record(sl, patient_id, "drugs", payload)
 
 
-def add_lab_test_prescription(patient_id, test_name, date):
+def add_lab_test_prescription(patient_id, sl, test_name, date):
     payload = {
         "test_name": test_name,
         "date": date
     }
-    write_a_record("medium", patient_id, "lab", payload)
+    write_a_record(sl, patient_id, "lab", payload)

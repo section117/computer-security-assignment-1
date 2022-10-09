@@ -1,11 +1,15 @@
 {"sens_level": "high", "patient_username": "1", "type": "personal", "payload": {"address": "aaaaa", "phone": "bbb"}}
 {"sens_level": "medium", "patient_username": "1", "type": "sickness", "payload": {"sickness": "sick 1", "symptoms": "symp 1", "date": "2022-01-01"}}
-{"sens_level": "medium", "patient_username": "1", "type": "drugs", "payload": {"drugs": ["Pandol", "Syrup"], "date": "2022-01-01"}}
+{"sens_level": "low", "patient_username": "1", "type": "drugs", "payload": {"drugs": ["Pandol", "Syrup"], "date": "2022-01-01"}}
 {"sens_level": "medium", "patient_username": "1", "type": "lab", "payload": {"test_name": "FBC", "results": "Normal Results", "date": "2022-01-01"}}
 {"sens_level": "high", "patient_username": "1", "type": "personal", "payload": {"address": "aaaaa", "phone": "bbb"}}
 {"sens_level": "medium", "patient_username": "1", "type": "sickness", "payload": {"sickness": "sick 1", "symptoms": "symp 1", "date": "2022-01-01"}}
 {"sens_level": "medium", "patient_username": "1", "type": "drugs", "payload": {"drugs": ["Pandol", "Syrup"], "date": "2022-01-01"}}
-{"sens_level": "medium", "patient_username": "1", "type": "lab", "payload": {"test_name": "FBC", "results": "Normal Results", "date": "2022-01-01"}}
+{"sens_level": "low", "patient_username": "1", "type": "lab", "payload": {"test_name": "FBC", "results": "Normal Results", "date": "2022-01-01"}}
 {"sens_level": "medium", "patient_username": "1", "type": "sickness", "payload": {"sickness": "Fever", "symptoms": "Fev", "date": "2022-10-08"}}
 {"sens_level": "medium", "patient_username": "2", "type": "drugs", "payload": {"drugs": ["pandol", "pyratin"], "date": "2022-10-08"}}
 {"sens_level": "medium", "patient_username": "3", "type": "lab", "payload": {"test_name": "ESR", "date": "2022-10-08"}}
+{"sens_level": "high", "patient_username": "2", "type": "sickness", "payload": {"sickness": "F", "symptoms": "d", "date": "2022-10-09"}}
+{"sens_level": "low", "patient_username": "3", "type": "sickness", "payload": {"sickness": "Un", "symptoms": "www", "date": "2022-10-09"}}
+{"sens_level": "medium", "patient_username": "5", "type": "personal", "payload": {"address": "adddddd", "phone": "014756389"}}
+{"sens_level": "high", "patient_username": "5", "type": "sickness", "payload": {"sickness": "Blood Check", "symptoms": "Blood loss", "date": "2022-10-09"}}
